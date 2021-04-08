@@ -1,0 +1,10 @@
+@import '../theme/mainTheme';
+
+.calculator {
+  padding: 25px;
+  padding-top: 30px;
+  width: 240px;
+  // min-height: 520px;
+  background-color: $backgroundColor;
+  margin: auto;
+}

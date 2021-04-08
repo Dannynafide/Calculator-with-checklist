@@ -1,0 +1,74 @@
+@import '../../theme/mainTheme';
+.calculator-keypad {
+  margin: 15px 0 20px 0;
+  // background-color: red;
+}
+.bracket-keys {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+}
+.bracket-keys > * {
+  line-height: 16px;
+  color: $primaryColor;
+  background: transparent;
+  border: 1px solid $borderColor;
+  border-radius: 4px;
+}
+
+.input-keys {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 7fr 4fr;
+  column-gap: 12px;
+}
+
+.digit-keys {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 12px;
+}
+.digit-keys > * {
+  background-color: transparent;
+  border: none;
+  color: $white;
+  font-size: 16px;
+}
+
+.operator-keys {
+  display: grid;
+  grid-template-columns: repeat(2, 36px);
+  grid-template-rows: repeat(4, 36px);
+  column-gap: 12px;
+  row-gap: 12px;
+  justify-content: end;
+}
+.operator-keys > * {
+  background-color: $primaryColor;
+  border: none;
+  border-radius: 30px;
+  color: $backgroundColor;
+  // font-weight: bold;
+  font-size: 16px;
+}
+
+.key-add {
+  grid-row: 2 / 4;
+}
+
+.key-equals {
+  grid-column: span 2;
+  background: rgb(219, 239, 180);
+
+  display: flex;
+  justify-content: center;
+}
+.key-equals > * {
+  align-self: center;
+}
+
+.key-divide {
+  transform: rotate(10deg);
+  font-size: 0.7rem;
+  font-weight: bold;
+}

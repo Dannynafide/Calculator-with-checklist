@@ -1,0 +1,16 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+.item__key-remove {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.4);
+  background: transparent;
+  border: none;
+
+  :hover {
+    color: red;
+  }
+}
