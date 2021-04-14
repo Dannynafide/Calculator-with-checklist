@@ -6,6 +6,11 @@ import { routes } from '../../routes';
 import { withRouter } from 'react-router';
 
 class Navigation extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isLogged: false };
+  }
+
   getNavLinkClass = (path) => {
     return this.props.location.pathname === path ? 'active' : '';
   };

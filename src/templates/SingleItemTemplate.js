@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import './SingleItemTemplate.scss';
 import { useHistory } from 'react-router-dom';
-import { setName } from '../actions/mathOperationsSlice';
+import { setName } from '../reducers/mathOperationsSlice';
 import { routes } from '../routes/index';
 
 export default function FlexTemplate({ id, title, itemName, mathOperation }) {

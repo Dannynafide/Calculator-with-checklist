@@ -7,7 +7,8 @@ import Check from './Check';
 import MainTemplate from '../templates/MainTemplate';
 import store from '../store/store';
 import SingleItemPage from './SingleItemPage';
-// import Login from './Login';
+import LoginPage from '../components/Auth/Login/Login';
+import RegisterPage from '../components/Auth/Register/Register';
 
 const App = () => (
   <div>
@@ -15,14 +16,15 @@ const App = () => (
       <BrowserRouter>
         <MainTemplate>
           <Switch>
-            <Route path={routes.check} component={Check} />
             <Route exact path={routes.home} component={Calculate} />
+            <Route path={routes.check} component={Check} />
             <Route
               exact
               path={routes.editItemName}
               component={SingleItemPage}
             />
-            {/* <Route exact path={routes.login} component={Login} /> */}
+            <Route exact path={routes.login} component={LoginPage} />
+            <Route exact path={routes.register} component={RegisterPage} />
           </Switch>
         </MainTemplate>
       </BrowserRouter>

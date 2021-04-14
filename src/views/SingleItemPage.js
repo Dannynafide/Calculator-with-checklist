@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import SingleItemTemplate from '../templates/SingleItemTemplate';
-import { selectMathOperation } from '../actions/mathOperationsSlice';
+import { selectMathOperation } from '../reducers/mathOperationsSlice';
 
 function SingleItemPage(props) {
   const { id } = props.match.params;

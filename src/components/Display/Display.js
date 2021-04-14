@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { evaluate } from 'mathjs';
 import Price from './Price/Price';
 import './Display.scss';
-import { selectCount } from '../../actions/mathOperationsSlice';
+import { selectCount } from '../../reducers/mathOperationsSlice';
 
 function Display() {
   const list = useSelector(selectCount);
@@ -20,7 +20,7 @@ function Display() {
 
   return (
     <div className="display">
-      <p className="title">My trip to Spain</p>
+      {/* <p className="title">My trip to Spain</p> */}
       <Price value={count} />
       <span className="underlineText" />
     </div>

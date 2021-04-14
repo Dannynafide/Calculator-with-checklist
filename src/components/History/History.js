@@ -6,7 +6,7 @@ import {
   selectCount,
   removeMathOperation,
   setComplite,
-} from '../../actions/mathOperationsSlice';
+} from '../../reducers/mathOperationsSlice';
 import Item from './Item/Item';
 import ItemDetails from './ItemDetails/ItemDetails';
 

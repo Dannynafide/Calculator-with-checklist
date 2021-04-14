@@ -1,0 +1,20 @@
+.material-input {
+  width: 100%;
+  label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.42);
+  }
+
+  div {
+    font-size: 14px;
+    input {
+      color: white;
+    }
+    &.MuiInput-underline:before {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.42);
+    }
+    &.MuiInput-underline:hover:not(.Mui-disabled):before {
+      border-bottom: 2px solid rgba(255, 255, 255, 0.87);
+    }
+  }
+}

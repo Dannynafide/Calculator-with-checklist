@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Keypad from '../components/Keypad/Keypad';
 import History from '../components/History/History';
-import FlexTemplate from '../templates/FlexTemplate';
+import CalculatorTemplate from '../templates/CalculatorTemplate';
+import firebase from '../firebase';
 
-function Calculate() {
+function Calculate(props) {
+  // const [quote, setQuote] = useState('');
+
+  // useEffect(() => {
+  //   firebase.getCurrentUserQuote().then(setQuote);
+  // });
+
   return (
-    <FlexTemplate>
+    <CalculatorTemplate>
       <History />
       <Keypad />
-    </FlexTemplate>
+    </CalculatorTemplate>
   );
 }
 

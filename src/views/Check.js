@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import { evaluate } from 'mathjs';
 import ProgressBar from '../components/ProgressBar/ProgressBar';
 import History from '../components/History/History';
-import { selectCount } from '../actions/mathOperationsSlice';
-import FlexTemplate from '../templates/FlexTemplate';
+import { selectCount } from '../reducers/mathOperationsSlice';
+import CalculatorTemplate from '../templates/CalculatorTemplate';
 
 function Check() {
   const mathOperationList = useSelector(selectCount);
@@ -23,23 +23,23 @@ function Check() {
   });
 
   return (
-    <>
+    <CalculatorTemplate>
       {mathOperationList.length > 0 ? (
-        <FlexTemplate>
+        <>
           <div className="calculator__motto">
             <p>Spain,</p>
             <p fontSize="24px">it's on the way!</p>
           </div>
           <ProgressBar progress={(countComplite / count) * 100} />
           <History details />
-        </FlexTemplate>
+        </>
       ) : (
         <p className="missing-operation">
           Don't wait! <br />
           Add the first element 😀
         </p>
       )}
-    </>
+    </CalculatorTemplate>
   );
 }
 

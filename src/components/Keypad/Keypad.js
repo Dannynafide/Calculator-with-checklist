@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
 import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-import { addMathOperation } from '../../actions/mathOperationsSlice';
+import { addMathOperation } from '../../reducers/mathOperationsSlice';
 import ButtonKey from './ButtonKey/ButtonKey';
 import './Keypad.scss';
 import InputKeypad from './InputKeypad/InputKeypad';
