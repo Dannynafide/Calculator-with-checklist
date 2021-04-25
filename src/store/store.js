@@ -1,10 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import mathOperationsReducer from '../reducers/mathOperationsSlice';
-import userReducer from '../reducers/userSlice';
+
+import authReducer from '../features/auth/authSlice';
+import calculatorReducer from '../features/calculator/calculatorSlice';
+import snackbarReducer from '../features/snackbar/snackbarSlice';
 
 export default configureStore({
   reducer: {
-    mathOperations: mathOperationsReducer,
-    user: userReducer,
+    auth: authReducer,
+    calculator: calculatorReducer,
+    snackbar: snackbarReducer,
   },
 });

@@ -1,26 +1,31 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
-import Display from '../components/Display/Display';
-import './CalculatorTemplate.scss';
-import Navigation from '../components/Navigation/Navigation';
-import firebase from '../firebase';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+
+import Display from '../components/Display';
+import Nav from '../containers/Nav';
 
 function CalculatorTemplate({ children }) {
-  if (!firebase.getCurrentUsername()) {
-    // not logged in
-    alert('Please login first');
-    return <Redirect to="/login" />;
-  }
-
   return (
     <>
-      <Navigation />
-      <div className="flexTemplate">
+      <Nav />
+      <StyledBodyCalculator>
         <Display />
         {children}
-      </div>
+      </StyledBodyCalculator>
     </>
   );
 }
+
+const StyledBodyCalculator = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+CalculatorTemplate.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 
 export default CalculatorTemplate;

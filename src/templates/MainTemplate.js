@@ -1,47 +1,39 @@
-import React, { useState, useEffect } from 'react';
-import { CircularProgress, ThemeProvider } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import { withRouter } from 'react-router-dom';
+import React from 'react';
+import styled, { ThemeProvider } from 'styled-components';
+import PropTypes from 'prop-types';
 
-import firebase from '../firebase';
-import '../theme/globalStyle.scss';
-import './MainTemplate.scss';
-import { theme } from '../theme/materialUi';
+import AppBar from '../containers/AppBar';
+import { theme } from '../theme/mainTheme';
 
-function MainTemplate(props) {
-  const [firebaseInitialized, setFirebaseInitialized] = useState(false);
+import { GlobalStyles } from '../theme/GlobalStyle';
+import Snackbar from '../features/snackbar/Snackbar';
 
-  useEffect(() => {
-    firebase.isInitialized().then((val) => {
-      setFirebaseInitialized(val);
-    });
-  });
-
+const MainTemplate = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
-      {firebaseInitialized !== false ? (
-        <div className="calculator">
-          <div className="app-bar">
-            <span>My Trip to spain</span>
-            <button className="app-bar__hamburger" onClick={logout}>
-              <MenuIcon />
-            </button>
-            <span className="underlineTextt" />
-          </div>
-
-          {props.children}
-        </div>
-      ) : (
-        <div id="loader">
-          <CircularProgress />
-        </div>
-      )}
+      <GlobalStyles />
+      <StyledCalculator>
+        <AppBar />
+        <StyledComponent>{children}</StyledComponent>
+      </StyledCalculator>
+      <Snackbar timeout={6000} />
     </ThemeProvider>
   );
+};
+const StyledCalculator = styled.div`
+  position: relative;
+  width: 270px;
+  margin: auto;
+  background-color: #3e4246;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+`;
 
-  async function logout() {
-    await firebase.logout();
-    props.history.push('/');
-  }
-}
-export default withRouter(MainTemplate);
+const StyledComponent = styled.div`
+  padding: 25px;
+  background-color: ${(props) => props.theme.backgroundColor}; ;
+`;
+MainTemplate.propTypes = {
+  children: PropTypes.element.isRequired,
+};
+export default MainTemplate;
