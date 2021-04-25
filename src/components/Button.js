@@ -13,7 +13,10 @@ const StyledBtn = styled.button`
   text-decoration: none;
 
   &:active {
-    background: rgba(219, 239, 180, 0.9);
+    background: ${(props) =>
+      props.secondary
+        ? props.theme.secondaryColorLighten
+        : props.theme.primaryColorLighten};
     color: black;
   }
 `;
