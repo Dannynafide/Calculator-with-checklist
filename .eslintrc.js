@@ -29,5 +29,6 @@ module.exports = {
       'error',
       { props: true, ignorePropertyModificationsFor: ['state'] },
     ],
+    'react/jsx-props-no-spreading': 0,
   },
 };

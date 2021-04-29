@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import CheckIcon from '@material-ui/icons/Check';
+import { MdCheck } from 'react-icons/md';
 
 const ItemDetails = ({ item, removeMathOperation, setComplite }) => {
   const { id, name, cost, complite } = item;
@@ -20,7 +20,7 @@ const ItemDetails = ({ item, removeMathOperation, setComplite }) => {
         </StyledName>
         <StyledCost className={addClassActive}>{cost}</StyledCost>
         <StyledBtnChecked onClick={setComplite} className={addClassActive}>
-          <CheckIcon fontSize="small" />
+          <MdCheck fontSize="small" />
         </StyledBtnChecked>
       </StyledDetailsWrapper>
       <StyledUnderline />

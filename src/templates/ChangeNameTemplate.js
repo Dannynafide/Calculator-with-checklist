@@ -4,7 +4,7 @@ import { useHistory, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import { MdArrowBack } from 'react-icons/md';
 import { routes } from '../routes/index';
 import Button from '../components/Button';
 import Input from '../components/Input';
@@ -28,7 +28,7 @@ export default function ChangeNameTemplate({ id, name, cost, submit }) {
     <>
       <StyledWrapperBackIcon>
         <StyledBackIconBtn to={routes.home}>
-          <StyledArrowBackIosIcon fontSize="small" />
+          <StyledArrowBackIosIcon fontSize="big" />
         </StyledBackIconBtn>
       </StyledWrapperBackIcon>
 
@@ -61,7 +61,7 @@ const StyledBackIconBtn = styled(Link)`
   border: none;
   cursor: pointer;
 `;
-const StyledArrowBackIosIcon = styled(ArrowBackIosIcon)`
+const StyledArrowBackIosIcon = styled(MdArrowBack)`
   && {
     color: ${(props) => props.theme.primaryColor};
   }

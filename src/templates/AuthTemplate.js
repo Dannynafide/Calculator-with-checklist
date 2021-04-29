@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import LockIcon from '@material-ui/icons/Lock';
+import { MdLock } from 'react-icons/md';
 import useAuth from '../hooks/useAuthUser';
 import Button from '../components/Button';
 
@@ -13,7 +13,7 @@ function AuthTemplate({ children, label }) {
   return (
     <>
       <StyledLock>
-        <LockIcon />
+        <MdLock />
       </StyledLock>
       <StyledTitle>{label}</StyledTitle>
       {auth ? (

@@ -9,10 +9,8 @@ function PrivateRoute({ component: Component, ...rest }) {
 
   return (
     <Route
-      // eslint-disable-next-line react/jsx-props-no-spreading
       {...rest}
       render={(props) =>
-        // eslint-disable-next-line react/jsx-props-no-spreading
         auth ? <Component {...props} /> : <Redirect to="/login" />
       }
     />

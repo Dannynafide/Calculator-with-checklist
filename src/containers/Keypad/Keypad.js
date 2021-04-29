@@ -1,13 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import KeyboardReturnIcon from '@material-ui/icons/KeyboardReturn';
-import ArrowBackIcon from '@material-ui/icons/ArrowBack';
-
 import { evaluate } from 'mathjs';
+
+import { MdArrowBack, MdKeyboardReturn } from 'react-icons/md';
 import { addMathOperation } from '../../features/calculator/calculatorSlice';
 import ButtonKey from './ButtonKey';
-
 import { openSnackbar } from '../../features/snackbar/snackbarSlice';
 
 function Keypad() {
@@ -152,7 +150,7 @@ function Keypad() {
             <ButtonKey onClick={() => inputDigit(0)}>0</ButtonKey>
             <ButtonKey onClick={() => inputDot()}>.</ButtonKey>
             <ButtonKey onClick={() => clearLastChar()}>
-              <ArrowBackIcon fontSize="inherit" />
+              <MdArrowBack fontSize="inherit" />
             </ButtonKey>
           </StyledDigitKeys>
           <StyledOperatorKeys>
@@ -172,7 +170,7 @@ function Keypad() {
               <span>&#37;</span>
             </ButtonKey>
             <ButtonKeyEquals onClick={() => inputOperator('=')}>
-              <KeyboardReturnIcon fontSize="inherit" />
+              <MdKeyboardReturn fontSize="inherit" />
             </ButtonKeyEquals>
           </StyledOperatorKeys>
         </StyledInputKeys>
@@ -180,6 +178,7 @@ function Keypad() {
     </>
   );
 }
+
 const InputKeypad = styled.input`
   width: 100%;
   text-align: right;
@@ -269,4 +268,5 @@ const ButtonKeyEquals = styled(ButtonKey)`
     align-self: center;
   }
 `;
+
 export default Keypad;

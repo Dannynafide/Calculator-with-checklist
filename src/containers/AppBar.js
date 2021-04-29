@@ -4,11 +4,8 @@ import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { evaluate } from 'mathjs';
 
+import { MdMenu, MdExitToApp, MdDelete, MdCreate } from 'react-icons/md';
 import { Accordion, AccordionSummary } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
-import CreateIcon from '@material-ui/icons/Create';
 
 import {
   selectExpenses,
@@ -90,7 +87,7 @@ const AppBar = () => {
                   </StyledFlexYCenter>
                   <StyledFlexYCenter>
                     <span>{cost}</span>
-                    <StyledDeleteOutlineOutlinedIcon
+                    <StyledDeleteIcon
                       fontSize="small"
                       onClick={() => dispatch(removeExpense(item.id))}
                     />
@@ -124,7 +121,7 @@ const StyledAppBar = styled.div`
   color: #fff;
 `;
 
-const StyledHamburgerBtn = styled(MenuIcon)`
+const StyledHamburgerBtn = styled(MdMenu)`
   && {
     border: none;
     background-color: ${(props) => props.theme.backgroundColor};
@@ -205,11 +202,11 @@ const StyledFlexYCenter = styled.div`
   align-items: center;
 `;
 
-const StyledExitToAppIcon = styled(ExitToAppIcon)`
+const StyledExitToAppIcon = styled(MdExitToApp)`
   margin-left: 5px;
 `;
 
-const StyledDeleteOutlineOutlinedIcon = styled(DeleteOutlineOutlinedIcon)`
+const StyledDeleteIcon = styled(MdDelete)`
   margin-left: 5px;
   color: rgba(255, 255, 255, 0.5);
   cursor: pointer;
@@ -218,7 +215,7 @@ const StyledDeleteOutlineOutlinedIcon = styled(DeleteOutlineOutlinedIcon)`
   }
 `;
 
-const StyledCreateIcon = styled(CreateIcon)`
+const StyledCreateIcon = styled(MdCreate)`
   margin-right: 5px;
   color: rgba(255, 255, 255, 0.5);
   :hover {
