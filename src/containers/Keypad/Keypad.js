@@ -68,10 +68,18 @@ function Keypad() {
 
     if (nextOperator === '=') {
       try {
-        evaluate(value + displayValue);
+        const result = evaluate(value + displayValue);
+        if (result === undefined || Number.isNaN(result)) {
+          dispatch(
+            openSnackbar({ message: 'Operation impossible', type: 'error' })
+          );
+          return;
+        }
         dispatch(addMathOperation(value + displayValue));
       } catch (error) {
-        dispatch(openSnackbar({ message: error.message, type: 'error' }));
+        dispatch(
+          openSnackbar({ message: 'Operation impossible', type: 'error' })
+        );
       }
 
       clearAll();
