@@ -84,6 +84,9 @@ const StyledButton = styled(Button)`
 ChangeNameTemplate.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  cost: PropTypes.string.isRequired,
   submit: PropTypes.func.isRequired,
+  cost: PropTypes.string,
+};
+ChangeNameTemplate.defaultProps = {
+  cost: null,
 };

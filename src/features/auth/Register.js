@@ -8,7 +8,7 @@ import AuthTemplate from '../../templates/AuthTemplate';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-import { signUp } from './authSlice';
+import { registerAsync } from './authSlice';
 import { openSnackbar } from '../snackbar/snackbarSlice';
 
 export default () => {
@@ -20,7 +20,7 @@ export default () => {
 
   async function onSignUp() {
     try {
-      const resultAction = await dispatch(signUp({ email, password }));
+      const resultAction = await dispatch(registerAsync({ email, password }));
       unwrapResult(resultAction);
       setEmail('');
       setPassword('');

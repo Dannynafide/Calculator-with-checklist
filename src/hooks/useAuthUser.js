@@ -6,20 +6,25 @@ import { isInitialized } from '../services/firebase';
 
 export default () => {
   const dispatch = useDispatch();
-  const currentUser = useSelector(selectCurrentUser);
+
+  let currentUser = useSelector(selectCurrentUser);
+  if (!currentUser) {
+    currentUser = JSON.parse(localStorage.getItem('authUser'));
+  }
 
   useEffect(() => {
     const setUser = (user) => {
       if (user) {
-        dispatch(
-          login({
-            id: user.uid,
-            email: user.email,
-            refreshToken: user.refreshToken,
-          })
-        );
+        const newUser = {
+          id: user.uid,
+          email: user.email,
+          refreshToken: user.refreshToken,
+        };
+        dispatch(login(newUser));
+        localStorage.setItem('authUser', JSON.stringify(newUser));
       } else {
         dispatch(logout());
+        localStorage.removeItem('authUser');
       }
     };
 

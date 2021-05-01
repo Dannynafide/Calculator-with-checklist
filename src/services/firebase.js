@@ -14,8 +14,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 export const emailAuth = async (email, password) => {
-  // await firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL);
-
   return firebase.auth().signInWithEmailAndPassword(email, password);
 };
 

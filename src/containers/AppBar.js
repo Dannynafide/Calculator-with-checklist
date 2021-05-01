@@ -14,9 +14,9 @@ import {
   addNewExpense,
   removeExpense,
 } from '../features/calculator/calculatorSlice';
-import { logout } from '../services/firebase';
+import { logoutAsync, selectCurrentUser } from '../features/auth/authSlice';
 import Button from '../components/Button';
-import useAuth from '../hooks/useAuthUser';
+import { routes } from '../routes';
 
 const AppBar = () => {
   const history = useHistory();
@@ -29,9 +29,9 @@ const AppBar = () => {
     : '';
 
   const [isAccordion, setIsAccordion] = useState(false);
-  const auth = useAuth();
+  const isUser = useSelector(selectCurrentUser);
 
-  return auth ? (
+  return isUser ? (
     <StyledAppBar>
       <StyledAccordion expanded={isAccordion}>
         <StyledAccordionSummary
@@ -48,12 +48,18 @@ const AppBar = () => {
             onClick={() =>
               dispatch(addNewExpense()) &&
               !setIsAccordion(!isAccordion) &&
-              !history.push('/')
+              !history.push(routes.home)
             }
           >
             Add new calculate
           </Button>
-          <Button onClick={() => logout() && setIsAccordion(!isAccordion)}>
+          <Button
+            onClick={() =>
+              dispatch(logoutAsync()) &&
+              !setIsAccordion(!isAccordion) &&
+              !history.push(routes.login)
+            }
+          >
             <StyledFlexYCenter>
               Logout
               <StyledExitToAppIcon size="1.5em" />

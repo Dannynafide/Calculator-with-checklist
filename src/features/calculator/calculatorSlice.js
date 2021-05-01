@@ -5,23 +5,29 @@ const initialState = {
   expenses: [
     {
       id: '1',
-      name: 'Wycieczka w góry',
+      name: 'Trip to mountains',
       toDo: [
         {
           id: nanoid(),
-          name: 'paliwo',
+          name: 'fuel',
           cost: '200',
           complite: false,
         },
         {
           id: nanoid(),
-          name: 'bilety',
+          name: 'tickets',
           cost: '2*50',
           complite: false,
         },
         {
           id: nanoid(),
-          name: 'wynajem pokoju',
+          name: 'equipment rental',
+          cost: '150',
+          complite: false,
+        },
+        {
+          id: nanoid(),
+          name: 'rent a room',
           cost: '750',
           complite: false,
         },
@@ -29,29 +35,29 @@ const initialState = {
     },
     {
       id: '2',
-      name: 'Opłaty miesięczne',
+      name: 'Monthly fees',
       toDo: [
         {
           id: nanoid(),
-          name: 'Internet',
+          name: 'internet',
           cost: '50',
           complite: false,
         },
         {
           id: nanoid(),
-          name: 'czynsz',
+          name: 'rent',
           cost: '380',
           complite: false,
         },
         {
           id: nanoid(),
-          name: 'światło',
+          name: 'light fee',
           cost: '90',
           complite: false,
         },
         {
           id: nanoid(),
-          name: 'woda',
+          name: 'water fee',
           cost: '70',
           complite: false,
         },
@@ -59,29 +65,29 @@ const initialState = {
     },
     {
       id: '3',
-      name: 'Naprawa samochodu',
+      name: 'Car repair',
       toDo: [
         {
           id: nanoid(),
-          name: 'Poduszki silnika + robocizna',
+          name: 'Engine cushions',
           cost: '130+(2*80)+65+150',
           complite: false,
         },
         {
           id: nanoid(),
-          name: 'Czujnik temperatury silnika + robocizna',
+          name: 'Engine temperature sensor',
           cost: '40+70',
           complite: false,
         },
         {
           id: nanoid(),
-          name: 'Linka hamulca + robocizna',
+          name: 'Brake line',
           cost: '(2*44)+50',
           complite: false,
         },
         {
           id: nanoid(),
-          name: 'Łączniki stabilizatora + robocizna',
+          name: 'Stabilizer links',
           cost: '160+70',
           complite: false,
         },

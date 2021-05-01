@@ -208,7 +208,7 @@ const StyledBracketKeys = styled.div`
   column-gap: 10px;
 
   > * {
-    line-height: 16px;
+    line-height: 20px;
     color: ${(props) => props.theme.color.primary};
     background: transparent;
     border: 1px solid ${(props) => props.theme.color.border};

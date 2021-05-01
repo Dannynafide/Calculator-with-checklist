@@ -8,7 +8,7 @@ import AuthTemplate from '../../templates/AuthTemplate';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-import { emailAuthenticate } from './authSlice';
+import { emailAuthAsync } from './authSlice';
 import { openSnackbar } from '../snackbar/snackbarSlice';
 
 export default () => {
@@ -24,9 +24,7 @@ export default () => {
 
   async function onSignIn() {
     try {
-      const resultAction = await dispatch(
-        emailAuthenticate({ email, password })
-      );
+      const resultAction = await dispatch(emailAuthAsync({ email, password }));
       unwrapResult(resultAction);
       setEmail('');
       setPassword('');

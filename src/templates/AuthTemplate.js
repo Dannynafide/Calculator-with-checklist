@@ -1,14 +1,15 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { MdLock } from 'react-icons/md';
-import useAuth from '../hooks/useAuthUser';
+import { selectCurrentUser } from '../features/auth/authSlice';
 import Button from '../components/Button';
 
 function AuthTemplate({ children, label }) {
-  const auth = useAuth();
+  const isUser = useSelector(selectCurrentUser);
 
   return (
     <>
@@ -16,7 +17,7 @@ function AuthTemplate({ children, label }) {
         <MdLock size="1.5em" />
       </StyledLock>
       <StyledTitle>{label}</StyledTitle>
-      {auth ? (
+      {isUser ? (
         <div>
           <StyledParagraf>
             You are logged in. Go to the home page.

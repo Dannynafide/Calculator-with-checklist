@@ -1,9 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-import { emailAuth, createUser } from '../../services/firebase';
+import {
+  emailAuth,
+  createUser,
+  logout as logautFirebase,
+} from '../../services/firebase';
 
-export const emailAuthenticate = createAsyncThunk(
-  'auth/emailAuthenticate',
+export const emailAuthAsync = createAsyncThunk(
+  'auth/emailAuthAsync',
   async (user) => {
     const { email, password } = user;
     const response = await emailAuth(email, password);
@@ -15,14 +19,22 @@ export const emailAuthenticate = createAsyncThunk(
   }
 );
 
-export const signUp = createAsyncThunk('auth/signUp', async (user) => {
-  const { email, password } = user;
-  const response = await createUser(email, password);
-  return {
-    id: response.user.uid,
-    email: response.user.email,
-    refreshToken: response.user.refreshToken,
-  };
+export const registerAsync = createAsyncThunk(
+  'auth/registerAsync',
+  async (user) => {
+    const { email, password } = user;
+    const response = await createUser(email, password);
+    return {
+      id: response.user.uid,
+      email: response.user.email,
+      refreshToken: response.user.refreshToken,
+    };
+  }
+);
+
+export const logoutAsync = createAsyncThunk('auth/logoutAsync', async () => {
+  const result = await logautFirebase();
+  return result;
 });
 
 const initialState = {
@@ -43,15 +55,19 @@ export const authSlice = createSlice({
     builder
 
       // SignIn
-      .addCase(emailAuthenticate.fulfilled, (state, action) => {
+      .addCase(emailAuthAsync.fulfilled, (state, action) => {
         const user = action.payload;
         state.user = user;
       })
 
       // SignUp
-      .addCase(signUp.fulfilled, (state, action) => {
+      .addCase(registerAsync.fulfilled, (state, action) => {
         const user = action.payload;
         state.user = user;
+      })
+
+      .addCase(logoutAsync.fulfilled, (state) => {
+        state.user = null;
       });
   },
 });
