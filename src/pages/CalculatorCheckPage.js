@@ -31,8 +31,8 @@ function Check() {
       {toDo.length > 0 ? (
         <>
           <StyledMotto>
-            <p>Spain,</p>
-            <p>it&apos;s on the way!</p>
+            <p>Don&apos;t get too lazy!</p>
+            <p>start now!</p>
           </StyledMotto>
           <ProgressBar progress={(countFinish / count) * 100} />
           <History details />
@@ -57,7 +57,7 @@ const StyledMotto = styled.div`
   }
 
   & :nth-child(2) {
-    font-size: ${(props) => props.theme.fontSize.xl};
+    font-size: 32px;
   }
 `;
 
