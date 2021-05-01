@@ -13,7 +13,7 @@ function AuthTemplate({ children, label }) {
   return (
     <>
       <StyledLock>
-        <MdLock />
+        <MdLock size="1.5em" />
       </StyledLock>
       <StyledTitle>{label}</StyledTitle>
       {auth ? (

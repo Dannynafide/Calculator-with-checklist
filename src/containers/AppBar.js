@@ -56,7 +56,7 @@ const AppBar = () => {
           <Button onClick={() => logout() && setIsAccordion(!isAccordion)}>
             <StyledFlexYCenter>
               Logout
-              <StyledExitToAppIcon />
+              <StyledExitToAppIcon size="1.5em" />
             </StyledFlexYCenter>
           </Button>
         </StyledOptionsPanel>
