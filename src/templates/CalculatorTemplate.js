@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-import Display from '../components/Display';
+import Display from '../components/Display/Display';
 import Nav from '../containers/Nav';
 
 function CalculatorTemplate({ children }) {

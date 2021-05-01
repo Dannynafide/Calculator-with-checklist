@@ -182,12 +182,12 @@ function Keypad() {
 const InputKeypad = styled.input`
   width: 100%;
   text-align: right;
-  font-size: 16px;
+  font-size: ${(props) => props.theme.fontSize.m};
   background: transparent;
   overflow: hidden;
-  caret-color: ${(props) => props.theme.primaryColor};
+  caret-color: ${(props) => props.theme.color.primary};
   border: none;
-  color: white;
+  color: ${(props) => props.theme.fontColor.primary};
 
   :focus {
     outline: none;
@@ -201,9 +201,9 @@ const StyledBracketKeys = styled.div`
 
   > * {
     line-height: 16px;
-    color: ${(props) => props.theme.primaryColor};
+    color: ${(props) => props.theme.color.primary};
     background: transparent;
-    border: 1px solid ${(props) => props.theme.borderColor};
+    border: 1px solid ${(props) => props.theme.color.border};
     border-radius: 4px;
   }
 `;
@@ -227,8 +227,8 @@ const StyledDigitKeys = styled.div`
   > * {
     background-color: transparent;
     border: none;
-    color: #fff;
-    font-size: 16px;
+    color: ${(props) => props.theme.fontColor.primary};
+    font-size: ${(props) => props.theme.fontSize.m};
   }
 `;
 
@@ -241,17 +241,17 @@ const StyledOperatorKeys = styled.div`
   justify-content: end;
 
   > * {
-    background-color: ${(props) => props.theme.primaryColor};
+    background-color: ${(props) => props.theme.color.primary};
     border: none;
     border-radius: 30px;
-    color: ${(props) => props.theme.backgroundColor};
-    font-size: 16px;
+    color: ${(props) => props.theme.color.background};
+    font-size: ${(props) => props.theme.fontSize.m};
   }
 `;
 
 const ButtonKeyDivide = styled(ButtonKey)`
   transform: rotate(10deg);
-  font-size: 0.7rem;
+  font-size: ${(props) => props.theme.fontSize.xxs};
   font-weight: bold;
 `;
 const ButtonKeyAdd = styled(ButtonKey)`
@@ -259,7 +259,7 @@ const ButtonKeyAdd = styled(ButtonKey)`
 `;
 const ButtonKeyEquals = styled(ButtonKey)`
   grid-column: span 2;
-  background: rgb(219, 239, 180);
+  background: ${(props) => props.theme.color.secondary};
 
   display: flex;
   justify-content: center;

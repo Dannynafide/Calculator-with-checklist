@@ -24,14 +24,14 @@ const StyledCalculator = styled.div`
   position: relative;
   width: 270px;
   margin: auto;
-  background-color: #3e4246;
-  color: white;
+  background-color: ${(props) => props.theme.color.background};
+  color: ${(props) => props.theme.fontColor.primary};
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 `;
 
 const StyledComponent = styled.div`
   padding: 25px;
-  background-color: ${(props) => props.theme.backgroundColor}; ;
+  background-color: ${(props) => props.theme.color.backgorund}; ;
 `;
 MainTemplate.propTypes = {
   children: PropTypes.element.isRequired,

@@ -41,7 +41,7 @@ const StyledHistory = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  font-size: 11px;
+  font-size: ${(props) => props.theme.fontSize.xs};
   letter-spacing: 1px;
   min-height: 70px;
 `;

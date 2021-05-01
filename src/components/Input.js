@@ -11,7 +11,7 @@ const Input = styled.input`
   font-size: 14px;
   background: transparent;
   border: none;
-  caret-color: ${(props) => props.theme.primaryColor};
+  caret-color: ${(props) => props.theme.color.primary};
   overflow: hidden;
   color: white;
   letter-spacing: 1px;
@@ -20,15 +20,15 @@ const Input = styled.input`
 
   &:focus {
     outline: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid ${(props) => props.theme.color.borderActive};
   }
   &::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: ${(props) => props.theme.fontColor.secondary};
     padding: 0px 1px;
   }
 
   :hover {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid ${(props) => props.theme.color.borderActive};
   }
 `;
 

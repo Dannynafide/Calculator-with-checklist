@@ -63,17 +63,17 @@ const StyledBackIconBtn = styled(Link)`
 `;
 const StyledArrowBackIosIcon = styled(MdArrowBack)`
   && {
-    color: ${(props) => props.theme.primaryColor};
+    color: ${(props) => props.theme.color.primary};
   }
 `;
 const StyledInput = styled(Input)`
   text-align: right;
-  font-size: 16px;
+  font-size: ${(props) => props.theme.fontSize.m};
 `;
 
 const StyledCost = styled.p`
   align-self: flex-end;
-  color: rgba(255, 255, 255, 0.6);
+  color: ${(props) => props.theme.fontColor.secondary};
 `;
 
 const StyledButton = styled(Button)`

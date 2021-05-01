@@ -102,8 +102,6 @@ const AppBar = () => {
           )}
         </StyledCalculationList>
       </StyledAccordion>
-
-      <StyledUnderline />
     </StyledAppBar>
   ) : (
     <></>
@@ -111,51 +109,45 @@ const AppBar = () => {
 };
 const StyledAppBar = styled.div`
   position: relative;
-  background-color: ${(props) => props.theme.backgroundColor};
+  background-color: ${(props) => props.theme.color.background};
   padding: 0px 10px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  background-color: ${(props) => props.theme.backgroundColor};
-  color: #fff;
+  background-color: ${(props) => props.theme.color.background};
+  color: ${(props) => props.theme.fontColor.primary};
 `;
 
 const StyledHamburgerBtn = styled(MdMenu)`
   && {
     border: none;
-    background-color: ${(props) => props.theme.backgroundColor};
-    color: white;
+    background-color: ${(props) => props.theme.color.background};
+    color: ${(props) => props.theme.fontColor.primary};
+
     :hover {
-      color: ${(props) => props.theme.primaryColor};
+      color: ${(props) => props.theme.color.primary};
     }
   }
 `;
 
-const StyledUnderline = styled.div`
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  background: red;
-`;
-
 const StyledAccordion = styled(Accordion)`
   && {
+    font-size: ${(props) => props.theme.fontSize.s};
     background-color: transparent;
     border: none;
-    color: white;
+    color: ${(props) => props.theme.fontColor.primary};
     box-shadow: none;
   }
 `;
 
 const StyledAccordionSummary = styled(AccordionSummary)`
   && {
+    font-size: ${(props) => props.theme.fontSize.m};
     margin: 0px;
     padding: 0px;
     border: none;
+    overflow: hidden;
+
     :hover {
-      color: ${(props) => props.theme.primaryColor};
+      color: ${(props) => props.theme.color.primary};
     }
   }
 `;
@@ -174,6 +166,7 @@ const StyledCalculationList = styled.ul`
   list-style-type: none;
   margin: 10px 0px;
   padding: 0px;
+  padding-bottom: 10px;
 `;
 
 const StyledCalculationItem = styled.li`
@@ -192,8 +185,9 @@ const StyledNameItem = styled.button`
   background-color: transparent;
   color: white;
   cursor: pointer;
+
   :hover {
-    color: ${(props) => props.theme.primaryColor};
+    color: ${(props) => props.theme.color.primary};
   }
 `;
 
@@ -207,19 +201,19 @@ const StyledExitToAppIcon = styled(MdExitToApp)`
 `;
 
 const StyledDeleteIcon = styled(MdDelete)`
-  margin-left: 5px;
-  color: rgba(255, 255, 255, 0.5);
+  margin-left: 10px;
+  color: ${(props) => props.theme.fontColor.hidden};
   cursor: pointer;
   :hover {
-    color: red;
+    color: ${(props) => props.theme.color.error};
   }
 `;
 
 const StyledCreateIcon = styled(MdCreate)`
-  margin-right: 5px;
-  color: rgba(255, 255, 255, 0.5);
+  margin-right: 10px;
+  color: ${(props) => props.theme.fontColor.hidden};
   :hover {
-    color: ${(props) => props.theme.primaryColor};
+    color: ${(props) => props.theme.color.primary};
   }
 `;
 

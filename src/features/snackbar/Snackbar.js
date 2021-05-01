@@ -87,8 +87,8 @@ const Container = styled.div`
   padding: 6px 10px;
   border-radius: 5px;
   border: transparent;
-  background-color: ${(props) => props.theme.secondaryColor};
-  color: ${(props) => props.theme.backgroundColor};
+  background-color: ${(props) => props.theme.color.secondary};
+  color: ${(props) => props.theme.color.background};
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
   display: flex;
@@ -117,11 +117,11 @@ const Button = styled.button`
   border: none;
   border-radius: 50%;
   background-color: transparent;
-  color: ${(props) => props.theme.backgroundColor};
+  color: ${(props) => props.theme.color.background};
   cursor: pointer;
 
   &:hover {
-    background-color: ${(props) => props.theme.secondaryColorLighten};
+    background-color: ${(props) => props.theme.color.secondaryLighten};
   }
 
   ${(props) =>

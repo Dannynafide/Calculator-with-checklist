@@ -10,7 +10,7 @@ const ItemHistory = ({ removeMathOperation, item }) => {
       <StyledRemoveBtn onClick={removeMathOperation}>
         <span>&#215;</span>
       </StyledRemoveBtn>
-      <div>{cost}</div>
+      <StyledCost>{cost}</StyledCost>
     </StyledItem>
   );
 };
@@ -18,20 +18,27 @@ const StyledItem = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: rgba(255, 255, 255, 0.8);
+  text-overflow: ellipsis;
+  color: ${(props) => props.theme.fontColor.secondary};
 `;
 
 const StyledRemoveBtn = styled.button`
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: ${(props) => props.theme.fontSize.m};
+  color: ${(props) => props.theme.fontColor.hidden};
   background: transparent;
   border: none;
   cursor: pointer;
+  margin-right: 10px;
 
   :hover {
-    color: red;
+    color: ${(props) => props.theme.color.error};
   }
 `;
+const StyledCost = styled.div`
+  text-overflow: ellipsis;
+  overflow: hidden;
+`;
+
 ItemHistory.propTypes = {
   removeMathOperation: PropTypes.func.isRequired,
   item: PropTypes.shape({

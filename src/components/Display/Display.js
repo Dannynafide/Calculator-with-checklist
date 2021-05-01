@@ -3,13 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { evaluate } from 'mathjs';
 
-import { selectCurrentToDo } from '../features/calculator/calculatorSlice';
-import { openSnackbar } from '../features/snackbar/snackbarSlice';
+import AutoTextSize from './AutoTextSize';
+import { selectCurrentToDo } from '../../features/calculator/calculatorSlice';
+import { openSnackbar } from '../../features/snackbar/snackbarSlice';
 
 function Display() {
   const dispatch = useDispatch();
   const toDo = useSelector(selectCurrentToDo);
-
   let cost = 0;
   if (toDo.length > 0) {
     try {
@@ -22,8 +22,9 @@ function Display() {
   return (
     <StyledDisplay>
       <StyledPrice>
-        <StyledPricePrefix>US $</StyledPricePrefix>
-        <StyledPriceNumber>{cost}</StyledPriceNumber>
+        <StyledPriceNumber>
+          <AutoTextSize>{cost}</AutoTextSize>
+        </StyledPriceNumber>
       </StyledPrice>
       <StyledUnderlineText />
     </StyledDisplay>
@@ -31,10 +32,8 @@ function Display() {
 }
 const StyledDisplay = styled.div`
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin: 15px 0 10px 0;
+  margin: 10px 0px 15px 0px;
+  padding: 5px 0px;
 `;
 const StyledUnderlineText = styled.span`
   position: absolute;
@@ -42,28 +41,20 @@ const StyledUnderlineText = styled.span`
   right: 0;
   width: 35px;
   height: 2px;
-  background: ${(props) => props.theme.primaryColor};
+  background: ${(props) => props.theme.color.primary};
 `;
 
 const StyledPrice = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
+  position: relative;
 `;
 
-const StyledPriceNumber = styled.p`
+const StyledPriceNumber = styled.div`
   font-size: 68px;
-  margin: 0;
-  padding: 0;
-  text-overflow: ellipsis;
-  overflow: hidden;
+  /* text-overflow: ellipsis; */
+  /* overflow: auto; */
+
+  text-align: right;
+  position: relative;
 `;
 
-const StyledPricePrefix = styled.span`
-  font-size: 14px;
-  margin-right: 10px;
-  color: rgba(255, 255, 255, 0.8);
-  flex-shrink: 0;
-`;
 export default Display;

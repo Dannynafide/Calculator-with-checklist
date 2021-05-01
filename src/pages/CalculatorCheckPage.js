@@ -49,21 +49,21 @@ function Check() {
 
 const StyledMotto = styled.div`
   margin: 30px 0 10px 0;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: ${(props) => props.theme.fontSize.s};
+  color: ${(props) => props.theme.fontColor.secondary};
   line-height: 1px;
   p {
     line-height: 25px;
   }
 
   & :nth-child(2) {
-    font-size: 24px;
+    font-size: ${(props) => props.theme.fontSize.xl};
   }
 `;
 
 const StyledNoMathOperation = styled.p`
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 16px;
+  color: ${(props) => props.theme.fontColor.secondary};
+  font-size: ${(props) => props.theme.fontSize.m};
   margin: 30px 0px 100px 0;
   line-height: 32px;
 `;

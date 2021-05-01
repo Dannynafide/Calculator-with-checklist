@@ -34,7 +34,7 @@ function AuthTemplate({ children, label }) {
 
 const StyledTitle = styled.p`
   text-align: center;
-  font-size: 22px;
+  font-size: ${(props) => props.theme.fontSize.l};
   margin-top: 20px;
   margin-bottom: 35px;
 `;
@@ -47,8 +47,8 @@ const StyledLock = styled.div`
     box-sizing: content-box;
     padding: 20px;
     border-radius: 100%;
-    background: ${(props) => props.theme.secondaryColor};
-    color: ${(props) => props.theme.backgroundColor};
+    background: ${(props) => props.theme.color.secondary};
+    color: ${(props) => props.theme.color.background};
   }
 `;
 

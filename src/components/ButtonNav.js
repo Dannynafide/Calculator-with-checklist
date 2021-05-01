@@ -5,12 +5,10 @@ import PropTypes from 'prop-types';
 
 function ButtonNav({ exact, to, label }) {
   return (
-    <>
-      <StyledNavLink exact={exact} to={to}>
-        <div>{label}</div>
-        <StyledNavLinkUnderline className="underline" />
-      </StyledNavLink>
-    </>
+    <StyledNavLink exact={exact} to={to}>
+      <p>{label}</p>
+      <StyledUnderline className="underline" />
+    </StyledNavLink>
   );
 }
 
@@ -20,27 +18,63 @@ const StyledNavLink = styled(NavLink)`
   /* Text */
   text-align: center;
   text-transform: uppercase;
-  color: #545c62;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 2px;
+  color: ${(props) => props.theme.fontColor.hidden};
+  font-size: ${(props) => props.theme.fontSize.xs};
+
+  letter-spacing: 1px;
   text-decoration: none;
+  transition: all 0.1s ease;
 
   &.active {
-    color: #fff;
-    font-size: 12px;
+    color: ${(props) => props.theme.fontColor.primary};
+    font-weight: 600;
+    letter-spacing: 2px;
 
     .underline {
-      box-shadow: 0 5px 0 0 #9eacb7;
+      :after {
+        backface-visibility: hidden;
+        border-color: ${(props) => props.theme.color.borderActive};
+        width: 95%;
+      }
+    }
+  }
+
+  :hover {
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    .underline {
+      :after {
+        backface-visibility: hidden;
+        border-color: ${(props) => props.theme.color.borderActive};
+        transition: width 250ms ease-in-out;
+        width: 95%;
+      }
     }
   }
 `;
 
-const StyledNavLinkUnderline = styled.div`
-  border-radius: 5px;
-  height: 3px;
-  box-shadow: 0 5px 0 0 #565e63;
-  margin-bottom: 10px;
+const StyledUnderline = styled.div`
+  :before,
+  :after {
+    backface-visibility: hidden;
+    border: 1.5px solid rgba(255, 255, 255, 0);
+    border-radius: 2px;
+    bottom: -2px;
+    content: '';
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 180ms ease-in-out;
+    width: 30px;
+  }
+
+  :before {
+    top: 5px;
+    width: 95%;
+    border-color: ${(props) => props.theme.fontColor.hidden};
+  }
 `;
 
 ButtonNav.propTypes = {

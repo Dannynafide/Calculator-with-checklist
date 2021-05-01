@@ -2,22 +2,22 @@ import styled from 'styled-components';
 
 const StyledBtn = styled.button`
   margin: 0px;
-  background: ${(props) =>
-    props.secondary ? props.theme.secondaryColor : props.theme.primaryColor};
-  border: none;
-  border-radius: 15px;
+  padding: 0px 10px;
   height: 30px;
   width: 100%;
-  padding: 0px 10px;
-  color: ${(props) => props.theme.backgroundColor};
+  background: ${(props) =>
+    props.secondary ? props.theme.color.secondary : props.theme.color.primary};
+  color: ${(props) => props.theme.color.background};
   text-decoration: none;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
 
   &:active {
     background: ${(props) =>
       props.secondary
-        ? props.theme.secondaryColorLighten
-        : props.theme.primaryColorLighten};
-    color: black;
+        ? props.theme.color.secondaryDarken
+        : props.theme.color.primaryDarken};
   }
 `;
 

@@ -6,7 +6,7 @@ import ButtonNav from '../components/ButtonNav';
 
 const Nav = () => {
   return (
-    <StyledNav>
+    <nav>
       <StyledLinks>
         <li>
           <ButtonNav exact to={routes.home} label="Lets calc!" />
@@ -15,16 +15,16 @@ const Nav = () => {
           <ButtonNav to={routes.check} label="Lets check!" />
         </li>
       </StyledLinks>
-    </StyledNav>
+    </nav>
   );
 };
-const StyledNav = styled.nav``;
 
 const StyledLinks = styled.ul`
   /* Remove bullets */
   list-style-type: none;
   padding: 0;
   margin: 0;
+  margin-bottom: 10px;
 
   display: grid;
   grid-template-columns: 1fr 1fr;
