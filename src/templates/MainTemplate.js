@@ -27,6 +27,10 @@ const StyledCalculator = styled.div`
   background-color: ${(props) => props.theme.color.background};
   color: ${(props) => props.theme.fontColor.primary};
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+  @media (max-width: 320px) {
+    width: 90%;
+  }
 `;
 
 const StyledComponent = styled.div`
