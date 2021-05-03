@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { MdLock } from 'react-icons/md';
 import { selectCurrentUser } from '../features/auth/authSlice';
 import Button from '../components/Button';
+import { routes } from '../routes';
 
 function AuthTemplate({ children, label }) {
   const isUser = useSelector(selectCurrentUser);
@@ -22,7 +23,7 @@ function AuthTemplate({ children, label }) {
           <StyledParagraf>
             You are logged in. Go to the home page.
           </StyledParagraf>
-          <Link to="/">
+          <Link to={routes.home}>
             <Button type="button">Home Page</Button>
           </Link>
         </div>

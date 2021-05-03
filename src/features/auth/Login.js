@@ -64,6 +64,12 @@ export default () => {
           </Link>
         </StyledWrapperButton>
       </StyledForm>
+
+      <StyledDataTest>
+        <div>Data for testing:</div>
+        <div>Email: a@a.pl</div>
+        <div>Password: test123</div>
+      </StyledDataTest>
     </AuthTemplate>
   );
 };
@@ -80,4 +86,8 @@ const StyledWrapperButton = styled.div`
   & :nth-child(1) {
     margin-top: 25px;
   }
+`;
+const StyledDataTest = styled.div`
+  margin-top: 30px;
+  color: ${(props) => props.theme.fontColor.secondary};
 `;
