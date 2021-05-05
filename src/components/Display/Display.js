@@ -50,8 +50,6 @@ const StyledPrice = styled.div`
 
 const StyledPriceNumber = styled.div`
   font-size: 68px;
-  /* text-overflow: ellipsis; */
-  /* overflow: auto; */
 
   text-align: right;
   position: relative;

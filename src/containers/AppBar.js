@@ -15,7 +15,7 @@ import {
   removeExpense,
 } from '../features/calculator/calculatorSlice';
 import { logoutAsync, selectCurrentUser } from '../features/auth/authSlice';
-import Button from '../components/Button';
+import Button from '../components/Button/Button';
 import { routes } from '../routes';
 
 const AppBar = () => {
@@ -160,7 +160,6 @@ const StyledAccordionSummary = styled(AccordionSummary)`
 
 const StyledOptionsPanel = styled.div`
   border-top: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 5px 0px;
 
   display: grid;
   grid-template-columns: 2fr 1fr;

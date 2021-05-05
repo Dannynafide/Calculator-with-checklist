@@ -1,18 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
 
-function ButtonNav({ exact, to, label }) {
-  return (
-    <StyledNavLink exact={exact} to={to}>
-      <p>{label}</p>
-      <StyledUnderline className="underline" />
-    </StyledNavLink>
-  );
-}
-
-const StyledNavLink = styled(NavLink)`
+export const StyledButtonNav = styled(NavLink)`
   align-self: end;
 
   /* Text */
@@ -55,7 +44,7 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-const StyledUnderline = styled.div`
+export const StyledUnderline = styled.div`
   :before,
   :after {
     backface-visibility: hidden;
@@ -76,15 +65,3 @@ const StyledUnderline = styled.div`
     border-color: ${(props) => props.theme.fontColor.hidden};
   }
 `;
-
-ButtonNav.propTypes = {
-  exact: PropTypes.bool,
-  to: PropTypes.string.isRequired,
-  label: PropTypes.string.isRequired,
-};
-
-ButtonNav.defaultProps = {
-  exact: false,
-};
-
-export default ButtonNav;

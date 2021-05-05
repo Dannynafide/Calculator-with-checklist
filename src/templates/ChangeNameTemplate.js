@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import { MdArrowBack } from 'react-icons/md';
 import { routes } from '../routes/index';
-import Button from '../components/Button';
+import Button from '../components/Button/Button';
 import Input from '../components/Input';
 
 export default function ChangeNameTemplate({ id, name, cost, submit }) {
@@ -67,7 +67,6 @@ const StyledArrowBackIosIcon = styled(MdArrowBack)`
   }
 `;
 const StyledInput = styled(Input)`
-  text-align: right;
   font-size: ${(props) => props.theme.fontSize.m};
 `;
 

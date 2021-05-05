@@ -6,7 +6,7 @@ import { unwrapResult } from '@reduxjs/toolkit';
 
 import AuthTemplate from '../../templates/AuthTemplate';
 import Input from '../../components/Input';
-import Button from '../../components/Button';
+import Button from '../../components/Button/Button';
 
 import { registerAsync } from './authSlice';
 import { openSnackbar } from '../snackbar/snackbarSlice';
@@ -72,9 +72,5 @@ const StyledForm = styled.form`
 const StyledWrapperButton = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
-
-  & :nth-child(1) {
-    margin-top: 25px;
-  }
+  margin-top: 30px;
 `;

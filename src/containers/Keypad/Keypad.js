@@ -174,9 +174,9 @@ function Keypad() {
             <ButtonKey onClick={() => inputOperator('-')}>
               <span>&#8722;</span>
             </ButtonKey>
-            <ButtonKey onClick={() => inputOperator('%')}>
+            <ButtonKeyPercent onClick={() => inputOperator('%')}>
               <span>&#37;</span>
-            </ButtonKey>
+            </ButtonKeyPercent>
             <ButtonKeyEquals onClick={() => inputOperator('=')}>
               <MdKeyboardReturn fontSize="inherit" />
             </ButtonKeyEquals>
@@ -262,6 +262,7 @@ const ButtonKeyDivide = styled(ButtonKey)`
   font-size: ${(props) => props.theme.fontSize.xxs};
   font-weight: bold;
 `;
+
 const ButtonKeyAdd = styled(ButtonKey)`
   grid-row: 2 / 4;
 `;
@@ -275,6 +276,10 @@ const ButtonKeyEquals = styled(ButtonKey)`
   > * {
     align-self: center;
   }
+`;
+
+const ButtonKeyPercent = styled(ButtonKey)`
+  font-size: ${(props) => props.theme.fontSize.s};
 `;
 
 export default Keypad;

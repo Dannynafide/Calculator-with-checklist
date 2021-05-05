@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 import { MdLock } from 'react-icons/md';
 import { selectCurrentUser } from '../features/auth/authSlice';
-import Button from '../components/Button';
+import Button from '../components/Button/Button';
 import { routes } from '../routes';
 
 function AuthTemplate({ children, label }) {

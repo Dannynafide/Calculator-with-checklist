@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
-const StyledBtn = styled.button`
-  margin: 0px;
+export const StyledButton = styled.button`
+  overflow: hidden;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  margin: 10px 0px;
   padding: 0px 10px;
   height: 30px;
   width: 100%;
@@ -9,9 +13,14 @@ const StyledBtn = styled.button`
     props.secondary ? props.theme.color.secondary : props.theme.color.primary};
   color: ${(props) => props.theme.color.background};
   text-decoration: none;
+  text-align: center;
   border: none;
   border-radius: 15px;
-  cursor: pointer;
+
+  :hover {
+    background: 'black';
+    opacity: 0.75;
+  }
 
   &:active {
     background: ${(props) =>
@@ -19,6 +28,7 @@ const StyledBtn = styled.button`
         ? props.theme.color.secondaryDarken
         : props.theme.color.primaryDarken};
   }
-`;
 
-export default StyledBtn;
+  /* this fixes the overflow:hidden in Chrome */
+  mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+`;

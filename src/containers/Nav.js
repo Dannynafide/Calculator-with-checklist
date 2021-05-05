@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { routes } from '../routes';
-import ButtonNav from '../components/ButtonNav';
+import ButtonNav from '../components/Button/ButtonNav';
 
 const Nav = () => {
   return (
