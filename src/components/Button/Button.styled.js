@@ -18,15 +18,10 @@ export const StyledButton = styled.button`
   border-radius: 15px;
 
   :hover {
-    background: 'black';
-    opacity: 0.75;
-  }
-
-  &:active {
-    background: ${(props) =>
-      props.secondary
-        ? props.theme.color.secondaryDarken
-        : props.theme.color.primaryDarken};
+    z-index: 2;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 2.275);
+    transition-duration: 400ms;
+    transform: scale(1.05, 1.05) translate3d(0, 0, 0);
   }
 
   /* this fixes the overflow:hidden in Chrome */

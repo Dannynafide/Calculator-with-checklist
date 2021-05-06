@@ -13,7 +13,7 @@ const Input = styled.input`
   border: none;
   caret-color: ${(props) => props.theme.color.primary};
   overflow: hidden;
-  color: white;
+  color: ${(props) => props.theme.fontColor.primary};
   letter-spacing: 1px;
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
