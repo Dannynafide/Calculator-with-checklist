@@ -10,7 +10,8 @@ To Ty wybierasz cel a przedstawiony kalkulator pomaga przejść tę drogę poprz
 Wdrożona aplikacja dostępna pod adresem: https://eager-murdock-da7cf8.netlify.app
 </br></br>
 
-<h3><b>Użyte technologie:</b></h3><hr>
+<hr>
+<h3><b>Użyte technologie:</b></h3>
 <ul>
     <li>JavaScript - React</li>
     <li>CSS - Styled components</li>
@@ -19,8 +20,9 @@ Wdrożona aplikacja dostępna pod adresem: https://eager-murdock-da7cf8.netlify.
     <li>Redux thunk</li>
     <li>Firebase</li>
 </ul>
-</br></br>
-<h3>Podgląd aplikacji:</h3><hr>
+</br>
+<hr>
+<h3>Podgląd aplikacji:</h3>
 
 <img src="./public/assets/preview.gif" width="60%" height="60%" />
 
