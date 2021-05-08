@@ -23,4 +23,4 @@ Wdrożona aplikacja dostępna pod adresem: https://eager-murdock-da7cf8.netlify.
 
 <img src="./public/assets/preview.gif" width="60%" height="60%" />
 
-Inspiracja z [https://dribbble.com/shots/6153949-Calculate-Check-Repeat](https://dribbble.com/shots/6153949-Calculate-Check-Repeat)
+Inspiracja z [dribbble](https://dribbble.com/shots/6153949-Calculate-Check-Repeat)
